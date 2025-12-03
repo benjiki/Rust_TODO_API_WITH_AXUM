@@ -13,3 +13,10 @@ pub struct CreateTodoRequest {
     pub title: String,
     pub description: String,
 }
+
+#[derive(Debug, Serialize, Deserialize)]
+
+pub struct PartialUpdateTodoRequest {
+    pub title: Option<String>,
+    pub description: Option<String>,
+}
