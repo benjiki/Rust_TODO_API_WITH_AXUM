@@ -1,10 +1,15 @@
-use axum::{Router, routing::get};
+use axum::{Router, routing::{delete, get, patch, post, put}};
 mod handlers;
 
 #[tokio::main]
 async  fn main()->anyhow::Result<()> {
 
-let router=Router::new().route("/list",get(handlers::todo::list::handler) );
+let router=Router::new().route("/todo",get(handlers::todo::list::handler) )
+.route("/todo:id", get(handlers::todo::list::handler))
+.route("/todo:id", delete(handlers::todo::list::handler))
+.route("/todo", post(handlers::todo::list::handler))
+.route("/todo:id", patch(handlers::todo::list::handler))
+.route("/todo:id", put(handlers::todo::list::handler));
 let listener=tokio::net::TcpListener::bind("0.0.0.0:9999").await?;
 axum::serve(listener,router).await?;
 Ok(())
