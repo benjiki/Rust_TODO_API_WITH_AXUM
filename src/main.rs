@@ -5,7 +5,7 @@ mod handlers;
 async  fn main()->anyhow::Result<()> {
 
 let router=Router::new().route("/todo",get(handlers::todo::list::handler) )
-.route("/todo:id", get(handlers::todo::list::handler))
+.route("/todo:id", get(handlers::todo::get  ::handler))
 .route("/todo:id", delete(handlers::todo::list::handler))
 .route("/todo", post(handlers::todo::list::handler))
 .route("/todo:id", patch(handlers::todo::list::handler))
