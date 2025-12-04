@@ -1,0 +1,6 @@
+[target.x86_64-pc-windows-msvc]
+rustflags = ["-L", "C:\\Program Files\\PostgreSQL\\16\\lib"]
+
+[env]
+LIBPQ_LIB = "C:\\Program Files\\PostgreSQL\\16\\lib"
+LIBPQ_INCLUDE = "C:\\Program Files\\PostgreSQL\\16\\include"

@@ -6,8 +6,8 @@ edition = "2024"
 [dependencies]
 anyhow = "1.0.100"
 axum = "0.8.7"
-diesel = {version="2.3.4",features=["mysql"]}
-diesel_migrations = {version="2.3.1",features=["mysql"]}
+diesel = { version = "2.3.4", features = ["postgres"] }
+diesel_migrations = { version = "2.3.1", features = ["postgres"] }
 dotenvy = "0.15.7"
 serde = {version="1.0.228",features=["derive","std"]}
 thiserror = "2.0.17"
